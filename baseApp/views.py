@@ -167,7 +167,7 @@ def NotesPg(request):
 def CertificationsPg(request):
     broj1 = request.session['mail']
     broj2 = request.session['first']
-    return render(request,'baseApp/certifications.html',{'broj1':broj1,
+    return render(request,'baseApp/analytics.html',{'broj1':broj1,
     'broj2':broj2})
 def AnalyticsPg(request):
     broj1 = request.session['mail']
