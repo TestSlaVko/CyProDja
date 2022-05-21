@@ -1,0 +1,193 @@
+{% load static %}
+<header>
+    <link rel="stylesheet"  href="./style.css">
+    <script src="./java.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div style="margin-left:5rem;"  class="container-fluid">
+      <a class="navbar-brand" href="#">CyberSecurity</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse justify-content-between navbar-collapse" id="navbarNavAltMarkup">
+        <div style="font-weight: bold;" class="navbar-nav">
+          <a class="nav-link active" href="{% url 'baseApp:profile' %}">Profile</a>
+          <a class="nav-link active" href="{% url 'baseApp:findCourses' %}">Find Courses</a>
+          
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"  data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Learning Paths
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Begginer</a>
+              <a class="dropdown-item" href="#">Intermediate</a>
+              <a class="dropdown-item" href="#">Advanced</a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-bar">
+            <Button  class="btn btn-primary">Log Out</Button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+
+    <div class="row col-12 m-1">
+       <div class="col-2">
+        <div class="row mt-3">
+            <form method="POST">
+            {% csrf_token %}
+            <h3>Courses Title</h3>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="ED" id="ED" class="form-check-input" type="checkbox" value="Exploit Development" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Explotation development
+                </label>
+            </div>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="WA" id="WA" value="Web Attacks" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Web Attacks
+                </label>
+            </div>
+
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="PE" id="PE" value="Privilege Escalation" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Privilege Escalation
+                </label>
+            </div>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="MD" id="MD" value="Malware Development" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Malware-Development
+                </label>
+            </div>
+
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="VD" id="VD" value="Virus Development" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Virus Development
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>Instructor</h3>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="Ins1" id="Ins1" class="form-check-input" type="checkbox" value="Instructor 1" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+               Instructor 1
+                </label>
+            </div>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="Ins2" id="Ins2" class="form-check-input" type="checkbox" value="Instructor 2" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Instructor 2
+                </label>
+            </div>
+
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="Ins3" id="Ins3" class="form-check-input" type="checkbox" value="Instructor 3" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Instructor 3 
+                </label>
+            </div>
+    
+        </div>
+
+
+        <div class="row">
+            <h3>Price:</h3>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input value="free" name="FreeC" id="FreeC"  class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label  class="form-check-label" for="flexCheckDefault">
+                Free
+                </label>
+            </div>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input value="paid" name="PaidC" id="PaidC" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Paid
+                </label>
+            </div>
+        </div>
+                <h3>Type of students</h3>
+        <div class="row">
+           
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="Begginer" id="Begginer"  class="form-check-input" type="checkbox" value="Begginer" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Begginer    
+                </label>
+            </div>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input  name="Intermediate" id="Intermediate" value="Intermediate" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Intermediate
+                </label>
+            </div>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Professional
+                </label>
+            </div>
+            <div style="margin-left:0.5rem;" class="form-check">
+                <input name="Expert" id="Expert" value="Expert" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                Expert
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            
+          
+            
+        </div>
+        <button style="margin-top:20px;" type="submit" class="btn btn-primary" name="Filter">Filter the Results</button>
+    </form>
+
+   </div>
+   <div  class="col-10">
+        <div style="border:1px solid black;" class="container-fluid">
+            <div>
+              <div class="row m-1">
+                 {% for item in potr %}
+                  <input name="testoj" id="testoj"  type="hidden" value="{{item.title}}">
+                 
+                  <div class="card m-2" style="width: 14rem;">
+                    <img style="max-height:14rem;" class="card-img-top" src="{% static 'baseApp/img/back.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <p class="card-text">Duis bibendum et nisl quis malesuada. Aenean lacus sem, interdum in pellentesque id, vehicula nec nulla.</p>
+                     <form  method="post">
+                         {% csrf_token %}
+                          <input type="hidden" name="testoj" id="testoj" value="{{item.title}}" >
+                          <button type="submit" name="kopce" id="kopce" class="btn btn-primary">Enroll Course</button>
+                     </form>
+                     
+                    </div>
+                  </div>
+                  {% if forloop.counter|divisibleby:4 %}</div><div class="row m-1">{% endif %}
+                  {% endfor %}
+              </div>
+            
+               
+            </div>
+
+        </div>
+
+   </div>
+       
+
+    </div>  
+</div>

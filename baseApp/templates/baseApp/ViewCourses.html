@@ -1,0 +1,83 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div style="margin-left:5rem;"  class="container-fluid">
+      <a class="navbar-brand" href="#">CyberSecurity</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse justify-content-between navbar-collapse" id="navbarNavAltMarkup">
+        <div style="font-weight: bold;" class="navbar-nav">
+          <a class="nav-link active" href="{% url 'baseApp:profile' %}">Profile</a>
+          <a class="nav-link active" href="{% url 'baseApp:findCourses' %}">Find Courses</a>
+          <a class="nav-link active" href="{% url 'baseApp:' %}">Main Page</a>
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"  data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Learning Paths
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Begginer</a>
+              <a class="dropdown-item" href="#">Intermediate</a>
+              <a class="dropdown-item" href="#">Advanced</a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-bar">
+            <Button  class="btn btn-primary">Log Out</Button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+<div class="justify-content-end  row mt-3">
+    <div class="col-2">
+       <a href="{% url 'baseApp:courses' %}"> <button class="btn btn-primary">Go back to My Courses</button></a>
+    </div>
+</div>
+<h1>{{sit}}</h1>
+
+<div  class="row">
+    <form  method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="ime" id="ime" value="{{VTitle}}">
+      <button type="submit"  class="btn btn-primary">Derol the course</button>
+    </form>
+    
+    <div class="col-2">
+        <h2>Notifications</h2>
+        <p>Some news about the specific course</p>
+        
+    </div>
+    <div  class="col-10">
+        <div style="border-left: 5px solid red;"  class="container-fluid">
+          <h1>Course Name: {{VTitle}}</h1>
+          <h2>Materials needed for the Specific course</h2>
+            <ul class="list-group list-group-flush">
+                <h2></h2>
+                <li class="list-group-item">Material 1</li>
+                <li class="list-group-item">Material 2</li>
+                <li class="list-group-item">Material 3</li>
+                <li class="list-group-item">Material 4</li>
+                <li class="list-group-item">Material 5</li>
+                
+
+            </ul>
+
+        </div>
+
+   </div>
+       
+
+    </div>  
+</div>
+<div class="row m-3">
+    <h1>Course Progress</h1>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      </div>
+</div>

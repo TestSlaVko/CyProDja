@@ -1,0 +1,65 @@
+
+#team{
+    margin-left:8rem !important;
+    padding: 1rem;
+}
+#team #circle{
+    
+    padding: 0.1rem;
+}
+#logReg a:hover{
+   transform: scale(1.5);
+}
+#logReg{
+    font-weight: bolder;
+}
+.navbar{
+    background-color: yellowgreen !important;
+}
+.navbar-brand{
+    padding-top: 0.8rem;
+    padding-left:3rem;
+    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+}
+#navBarSupportedContent a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+    margin-left:1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom:0.5rem;
+
+}
+#glaven{
+    text-align: center;
+}
+#glaven h1{
+    margin-top:1rem;
+    margin-bottom:2rem;
+}
+#mainHero{
+    background-image: url("./img/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+    padding-top:1rem;
+    height: 80vh;
+}
+#CardComp{
+    padding:1rem;
+}
+#CardComp .btn-group{
+    padding:1rem;
+
+}
+#CardComp:hover{
+    transform: scale(1.1);
+   
+}
