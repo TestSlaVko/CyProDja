@@ -3,7 +3,6 @@
 from cProfile import run
 import email
 from itertools import count
-from winreg import REG_RESOURCE_REQUIREMENTS_LIST
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
